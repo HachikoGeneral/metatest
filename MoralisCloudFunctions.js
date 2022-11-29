@@ -17,7 +17,7 @@ Moralis.Cloud.define("transferToken", async (request) => {
     };
   }
 
-  const web3 = Moralis.web3ByChain("0x13881")	//mumbai testnet
+  const web3 = new web3.eth
   const contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
 
   let data = await contract.methods.transfer(address, amount).encodeABI();
